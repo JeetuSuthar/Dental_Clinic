@@ -4,13 +4,13 @@ import homepage from "../assets/homepage.png";
 
 const Home = () => {
     return (
-        <div className="container w-[80%] mx-auto p-4">
+        <div className="container w-full lg:w-[80%] mx-auto p-4">
             <div className="lg:flex  items-center justify-center ">
                 <div className="lg:w-[45%]">
-                    <h1 className="font-bold py-4 text-5xl lg:text-6xl ">We Care For Your <span className="text-blue-400">Smile</span></h1>
+                    <h1 className="font-bold py-8 lg:py-4 text-5xl lg:text-6xl ">We Care For Your <span className="text-blue-400">Smile</span></h1>
                     <h4 className=" text-xl lg:text-3xl ">We Believe Everyone should have easy access to great dental clinic</h4>
                 </div>
-                <div>
+                <div className="">
                     <img className="" src={homepage} alt="" />
                 </div>
             </div>

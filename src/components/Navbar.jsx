@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     // NAVBAR START
-    <div className='flex justify-between items-center w-full h-20  text-black  '>
+    <div className=' flex justify-between items-center w-full h-20  text-black  '>
       <div className='flex items-center  ' >
         <img src={logo} alt="Company Logo" className="w-20 h-auto  " />
         <h1 className='text-2xl font-semibold   tracking-wide'>Dental Clinic</h1>
@@ -33,9 +33,9 @@ const Navbar = () => {
         {nav ? <FaTimes size={20} /> : <FaBars size={20} />}
       </div>
       {nav && (
-        <ul className='flex flex-col justify-center items-center  absolute top-0 left-0 w-full h-screen '>
+        <ul className='flex flex-col justify-center items-center  absolute top-0 left-0 w-full h-screen bg-gray-600   '>
           {links.map(({ id, link }) => (
-            <li key={id} className='px-4 capitalize cursor-pointer hover:scale-105 hover:text-black text-gray-500 py-5 text-2xl '>
+            <li key={id} className='px-4 capitalize cursor-pointer hover:scale-105 hover:text-black text-white py-5 text-2xl '>
               <Link to={link} smooth duration={500}>{link}</Link>
             </li>
           ))}
