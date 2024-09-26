@@ -4,7 +4,7 @@ function AboutUs() {
     return (
         
         <div className=' container mx-auto py-20   flex flex-col lg:flex-row items-center justify-center    h-full w-[75%]'>
-            <div className='lg:w-[100%] pr-10 lflex flex-col '>
+            <div className='lg:w-[100%]  flex flex-col '>
             <h1 className='font-bold text-5xl py-6 font-mono'>About Us</h1>
                 <div>
                 
