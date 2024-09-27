@@ -1,5 +1,6 @@
 import React from 'react'
 import about_img from "../assets/about_img.webp"
+import { Link } from 'react-router-dom'
 function AboutUs() {
     return (
         
@@ -13,7 +14,7 @@ function AboutUs() {
 
                 </div>
                 <div className='mx-auto py-10 '>
-                    <button className='bg-cyan-500 mx-auto px-10 py-3 text-xl rounded-xl hover:bg-white text-white  hover:text-black hover:border border-black'>Read More</button>
+                    <Link to="/profile" className='bg-cyan-500 mx-auto px-10 py-3 text-xl rounded-xl hover:bg-white text-white  hover:text-black hover:border border-black'>Read More</Link>
                 </div>
             </div>
 
