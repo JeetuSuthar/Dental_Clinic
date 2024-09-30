@@ -2,18 +2,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const AuthRouter = require('./Routes/AuthRouter'); // Authentication routes
+const AuthRouter = require('./Routes/AuthRouter'); // Keep the AuthRouter for authentication
 require('dotenv').config();
 require('./Models/db'); // Ensure your database connection is established
-
 const PORT = process.env.PORT || 8080;
-
-// CORS configuration - Add your frontend's GitHub Pages URL here
-app.use(cors({
-    origin: 'https://jeetusuthar.github.io', // Correct GitHub Pages URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true, // Enable credentials (cookies, authorization headers, etc.)
-}));
 
 // Basic ping route for health checks
 app.get('/ping', (req, res) => {
@@ -22,9 +14,12 @@ app.get('/ping', (req, res) => {
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors());
 
 // Routes
 app.use('/auth', AuthRouter); // Authentication routes
+// Removed the product routes since you don't want them
+// app.use('/products', ProductRouter); // This line has been removed
 
 // Start the server
 app.listen(PORT, () => {

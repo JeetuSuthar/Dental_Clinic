@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Profile from './pages/Profile';
 import Login from './components/Login';
 import Signup from './components/Signup'; // Import your Signup component
+import ClinicInfo from './pages/ClinicInfo';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("loggedInUser"));
@@ -53,6 +54,10 @@ function App() {
           element={isAuthenticated ? <Treatment /> : <Navigate to="/Dental_Clinic/login" />}
         />
         <Route
+          path="/Dental_Clinic/clinicinfo"
+          element={isAuthenticated ? <ClinicInfo/> : <Navigate to="/Dental_Clinic/clinicInfo" />}
+        />
+        <Route
           path="/profile"
           element={isAuthenticated ? <Profile /> : <Navigate to="/Dental_Clinic/login" />}
         />
@@ -74,6 +79,9 @@ const LandingPage = () => {
       </section>
       <section id="treatments">
         <Treatment />
+      </section>
+      <section id="treatments">
+        <ClinicInfo />
       </section>
     </>
   );
