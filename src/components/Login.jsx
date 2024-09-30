@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Login = ({ setIsAuthenticated }) => {
     const [loginInfo, setLoginInfo] = useState({ email: '', password: '' });
@@ -92,8 +92,17 @@ const Login = ({ setIsAuthenticated }) => {
                     </div>
                     {errorMessage && <p className="text-red-500 text-sm mb-4">{errorMessage}</p>}
                     {successMessage && <p className="text-green-500 text-sm mb-4">{successMessage}</p>}
-                    <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-200">Login</button>
+                    <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-200">
+                        Login
+                    </button>
                 </form>
+
+                <div className="mt-4 text-center">
+                    <p className="text-gray-700">Don't have an account?</p>
+                    <Link to="/Dental_Clinic/signup" className="text-blue-500 hover:underline">
+                        Sign up here
+                    </Link>
+                </div>
             </div>
         </div>
     );
