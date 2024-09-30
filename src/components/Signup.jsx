@@ -45,7 +45,7 @@ function Signup() {
                 handleSuccess(message);
                 // Redirecting after success
                 setTimeout(() => {
-                    navigate('/login');
+                    navigate('/Dental_Clinic/login');
                 }, 1000);  // 1-second delay to display success message
             } else if (error && error.details) {
                 const details = error.details[0]?.message || "An error occurred during signup.";

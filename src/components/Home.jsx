@@ -31,13 +31,16 @@ const Home = () => {
 
     return (
         <div className="container w-full lg:w-[80%] mx-auto p-4">
-            <h1 className="text-3xl font-bold">Welcome {loggedInUser}</h1>
-            <button
-                onClick={handleLogout}
-                className="bg-red-500 text-white px-4 py-2 rounded mt-4"
-            >
-                Logout
-            </button>
+          <div className="flex w-full">
+    <button
+        onClick={handleLogout}
+        className="ml-auto bg-red-500 text-white px-4 py-2 rounded"
+    >
+        Logout
+    </button>
+</div>
+
+            
 
             <div className="lg:flex items-center justify-center">
                 <div className="lg:w-[45%]">
