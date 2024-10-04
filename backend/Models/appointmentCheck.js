@@ -1,36 +1,28 @@
-const mongoose = require ("mongoose");
+// Models/appointmentCheck.js
+const mongoose = require("mongoose");
 
-const userAppointment= new mongoose.Schema({
-    date:{
-        type:String,
-        required:true,
-        min:4,
-        max:15,
+const userAppointment = new mongoose.Schema({
+    date: {
+        type: String,
+        required: true,
     },
-    name:{
-        type:String,
-        required:true,
-        min:3,
-        max:15,
+    name: {
+        type: String,
+        required: true,
     },
-    email:{
-        type:String,
-        required:true,
-        
-        max:20,
+    email: {
+        type: String,
+        required: true,
     },
-    phone:{
-        type:String,
-        required:true,
-        min:10,
-        max:13,
+    phone: {
+        type: String,
+        required: true,
     },
-    time:{
-        type:String,
-        required:true,
-        min:3,
-        max:20,
+    time: {
+        type: String,
+        required: true,
     },
 });
 
-module.exports=mongoose.model("appointment_info",userAppointment);
+// Model name should be singular and match the schema name
+module.exports = mongoose.model("appointment_infos", userAppointment);

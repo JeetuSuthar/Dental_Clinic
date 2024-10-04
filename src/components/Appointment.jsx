@@ -29,16 +29,24 @@ const Appointment = () => {
     }
 
     try {
-      // Make an API call to submit the form data here
-      // const response = await api.submitAppointment({ ...formData, selectedSlot });
+      const response = await fetch('http://localhost:8080/Dental_Clinic/appointment/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          ...formData, 
+          time: selectedSlot // Include the selected slot here
+        }),
+      });
 
-      console.log("Form Data:", formData);
-      console.log("Selected Slot:", selectedSlot);
-      
-      // Set success message
-      setSuccessMessage("Appointment booked successfully!");
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Something went wrong');
+      }
 
-      // Clear the form and selected slot after successful submission
+      const result = await response.json();
+      setSuccessMessage(result.message);
       setFormData({
         date: "",
         name: "",
@@ -63,17 +71,17 @@ const Appointment = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-200 to-blue-300 p-6">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-200 to-blue-300 p-4 sm:p-6">
       <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg w-full max-w-5xl overflow-hidden">
         {/* Left Side: Time Slots */}
-        <div className="flex flex-col w-full md:w-3/5 border-r border-gray-300 p-6">
+        <div className="flex flex-col w-full md:w-3/5 border-b md:border-b-0 md:border-r border-gray-300 p-4 sm:p-6">
           <h2 className="text-xl font-bold text-center mb-4">Available Time Slots</h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4">
             {timeSlots.map((slot) => (
               <div
                 key={slot}
                 onClick={() => handleSlotClick(slot)}
-                className={`cursor-pointer text-center py-3 border-2 rounded-lg 
+                className={`cursor-pointer text-center py-2 sm:py-3 border-2 rounded-lg 
                   ${selectedSlot === slot ? "bg-green-500 text-white" : "border-green-500 text-green-500"}
                   hover:bg-green-300 hover:text-white transition duration-300`}
               >
@@ -81,22 +89,12 @@ const Appointment = () => {
               </div>
             ))}
           </div>
-          {selectedSlot && (
-            <div className="text-center mt-6">
-              <button
-                onClick={() => console.log("Proceed to form")}
-                className="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-green-600"
-              >
-                Proceed to Form
-              </button>
-            </div>
-          )}
         </div>
 
         {/* Right Side: Form */}
-        <div className="flex flex-col w-full md:w-2/5 p-6">
-          <h1 className="text-3xl font-bold mb-4 mx-auto">Dental Clinic</h1>
-          <h2 className="text-xl font-bold mb-4">Book Your Appointment</h2>
+        <div className="flex flex-col w-full md:w-2/5 p-4 sm:p-6">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 mx-auto">Dental Clinic</h1>
+          <h2 className="text-lg sm:text-xl font-bold mb-4">Book Your Appointment</h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-col">
               <label className="text-gray-700">Choose Date</label>
