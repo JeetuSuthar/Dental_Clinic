@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import Login from './components/Login';
 import Signup from './components/Signup'; // Import your Signup component
 import ClinicInfo from './pages/ClinicInfo';
+import Appointment from './components/Appointment';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("loggedInUser"));
@@ -58,11 +59,15 @@ function App() {
           element={isAuthenticated ? <ClinicInfo/> : <Navigate to="/Dental_Clinic/clinicInfo" />}
         />
         <Route
+          path="/Dental_Clinic/appointment"
+          element={isAuthenticated ? <Appointment/> : <Navigate to="/Dental_Clinic/appointment" />}
+        />
+        <Route
           path="/profile"
           element={isAuthenticated ? <Profile /> : <Navigate to="/Dental_Clinic/login" />}
         />
       </Routes>
-      <Footer />
+      
     </Router>
   );
 }
@@ -83,6 +88,7 @@ const LandingPage = () => {
       <section id="treatments">
         <ClinicInfo />
       </section>
+      <Footer/>
     </>
   );
 }

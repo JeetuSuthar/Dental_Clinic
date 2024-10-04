@@ -5,6 +5,7 @@ const Login = ({ setIsAuthenticated }) => {
     const [loginInfo, setLoginInfo] = useState({ email: '', password: '' });
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
+    const [loading, setLoading] = useState(false); // State for loading
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -33,6 +34,8 @@ const Login = ({ setIsAuthenticated }) => {
             return handleError('Email and password are required');
         }
 
+        setLoading(true); // Set loading to true
+
         try {
             const url = 'http://localhost:8080/auth/login'; // Update the URL if necessary
             const response = await fetch(url, {
@@ -60,6 +63,8 @@ const Login = ({ setIsAuthenticated }) => {
         } catch (err) {
             handleError('An unexpected error occurred. Please try again later.');
             console.error(err);
+        } finally {
+            setLoading(false); // Reset loading state
         }
     };
 
@@ -77,6 +82,7 @@ const Login = ({ setIsAuthenticated }) => {
                             onChange={handleChange}
                             required
                             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500"
+                            aria-describedby="emailHelp"
                         />
                     </div>
                     <div className="mb-4">
@@ -88,12 +94,17 @@ const Login = ({ setIsAuthenticated }) => {
                             onChange={handleChange}
                             required
                             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500"
+                            aria-describedby="passwordHelp"
                         />
                     </div>
                     {errorMessage && <p className="text-red-500 text-sm mb-4">{errorMessage}</p>}
                     {successMessage && <p className="text-green-500 text-sm mb-4">{successMessage}</p>}
-                    <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-200">
-                        Login
+                    <button
+                        type="submit"
+                        disabled={loading} // Disable the button while loading
+                        className={`w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-200 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                        {loading ? 'Logging in...' : 'Login'}
                     </button>
                 </form>
 
