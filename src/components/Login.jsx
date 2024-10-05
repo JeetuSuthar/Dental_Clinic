@@ -5,15 +5,12 @@ const Login = ({ setIsAuthenticated }) => {
     const [loginInfo, setLoginInfo] = useState({ email: '', password: '' });
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-    const [loading, setLoading] = useState(false); // State for loading
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setLoginInfo((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        setLoginInfo((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleError = (message) => {
@@ -34,15 +31,19 @@ const Login = ({ setIsAuthenticated }) => {
             return handleError('Email and password are required');
         }
 
-        setLoading(true); // Set loading to true
+        setLoading(true);
 
         try {
-            const url = 'http://localhost:8080/auth/login'; // Update the URL if necessary
+            const url = 'http://localhost:8080/auth/login'; // Corrected URL
             const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
             });
+
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status}`);
+            }
 
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
@@ -51,9 +52,8 @@ const Login = ({ setIsAuthenticated }) => {
                 handleSuccess(message);
                 localStorage.setItem('token', jwtToken);
                 localStorage.setItem('loggedInUser', name);
-                setIsAuthenticated(true); // Update authentication status
-
-                navigate('/Dental_Clinic/'); // Redirect to the landing page
+                setIsAuthenticated(true);
+                navigate('/Dental_Clinic/');
             } else if (error && error.details) {
                 const details = error.details[0]?.message || 'An error occurred during login.';
                 handleError(details);
@@ -64,7 +64,7 @@ const Login = ({ setIsAuthenticated }) => {
             handleError('An unexpected error occurred. Please try again later.');
             console.error(err);
         } finally {
-            setLoading(false); // Reset loading state
+            setLoading(false);
         }
     };
 
@@ -82,7 +82,6 @@ const Login = ({ setIsAuthenticated }) => {
                             onChange={handleChange}
                             required
                             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500"
-                            aria-describedby="emailHelp"
                         />
                     </div>
                     <div className="mb-4">
@@ -94,25 +93,21 @@ const Login = ({ setIsAuthenticated }) => {
                             onChange={handleChange}
                             required
                             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500"
-                            aria-describedby="passwordHelp"
                         />
                     </div>
                     {errorMessage && <p className="text-red-500 text-sm mb-4">{errorMessage}</p>}
                     {successMessage && <p className="text-green-500 text-sm mb-4">{successMessage}</p>}
                     <button
                         type="submit"
-                        disabled={loading} // Disable the button while loading
+                        disabled={loading}
                         className={`w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-200 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
                         {loading ? 'Logging in...' : 'Login'}
                     </button>
                 </form>
-
                 <div className="mt-4 text-center">
                     <p className="text-gray-700">Don't have an account?</p>
-                    <Link to="/Dental_Clinic/signup" className="text-blue-500 hover:underline">
-                        Sign up here
-                    </Link>
+                    <Link to="/Dental_Clinic/signup" className="text-blue-500 hover:underline">Sign up here</Link>
                 </div>
             </div>
         </div>

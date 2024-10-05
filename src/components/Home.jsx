@@ -23,26 +23,26 @@ const Home = () => {
         localStorage.removeItem("loggedInUser");
         handleSuccess("User logged out");
 
+        // Clear the user state immediately for smoother UI
+        setLoggedInUser("");
+
+        // Redirect to login page after a short delay
         setTimeout(() => {
-            setLoggedInUser(""); // Clear the user state
-            navigate("/Dental_Clinic/login"); // Redirect to /Dental_Clinic/login after logout
-        }, 1000); // Delay for 1 second to show the success message before navigating
+            navigate("/Dental_Clinic/login");
+        }); // 1 second delay
     };
 
     return (
         <div className="container w-full lg:w-[80%] mx-auto p-4">
-           
-          <div className="flex w-full">
-          <h1 className="text-4xl font-bold text-red-500 " >Hello {loggedInUser} !!</h1>
-    <button
-        onClick={handleLogout}
-        className="ml-auto bg-red-500 text-white px-4 py-2 rounded"
-    >
-        Logout
-    </button>
-</div>
-
-            
+            <div className="flex w-full">
+                <h1 className="text-4xl font-bold text-red-500">Hello {loggedInUser} !!</h1>
+                <button
+                    onClick={handleLogout}
+                    className="ml-auto bg-red-500 text-white px-4 py-2 rounded"
+                >
+                    Logout
+                </button>
+            </div>
 
             <div className="lg:flex items-center justify-center">
                 <div className="lg:w-[45%]">
