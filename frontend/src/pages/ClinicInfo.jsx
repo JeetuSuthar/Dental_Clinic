@@ -21,7 +21,8 @@ const ClinicInfo = () => {
             <iframe
               title="clinic_location"
               className="w-full h-full"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0394743740367!2d73.79305007491702!3d18.481871070355844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfd4da0f15f9%3A0xe35701bdff8f276b!2sPopular%20Colony%2C%20Giridhar%20Nagar%2C%20Warje%2C%20Pune%2C%20Maharashtra%20411058!5e0!3m2!1sen!2sin!4v1727685004722!5m2!1sen!2sin"
+              
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.2627973069552!2d73.81217097882457!3d18.490447625244617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfe79aaaaaab%3A0x6af3cf2bec34e2c2!2sDental%20Clinic!5e1!3m2!1sen!2sin!4v1728150842312!5m2!1sen!2sin"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
