@@ -86,7 +86,7 @@ const LandingPage = () => {
         <Treatment />
       </section>
       <section id="treatments">
-        <ClinicInfo />
+        <ClinicInfo />zz
       </section>
       <Footer/>
     </>
