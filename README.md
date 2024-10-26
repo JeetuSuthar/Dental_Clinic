@@ -11,7 +11,7 @@ Welcome to my GitHub Pages website! Here, you'll find details about the project,
 - Contact Us
 
 # Login and Signup
-![Login and Signup Screen](Dental_Clinic/Screenshot%2024-10-14%20213131.png)
+![Login and Signup Screen](Screenshot%2024-10-14%20213131.png)
 ![Login and Signup Screen 2](Dental_Clinic/Screenshot%2024-10-14%20213142.png)
 
 # Home
