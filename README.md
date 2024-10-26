@@ -11,20 +11,20 @@ Welcome to my GitHub Pages website! Here, you'll find details about the project,
 - Contact Us
 
 # Login and Signup
-![Login and Signup](https://your-username.github.io/your-repo/Screenshot%2024-10-14%20213131.png)
-[Image of Login and Signup Screen 2](Screenshot%2024-10-14%20213142.png)
+![Login and Signup Screen](Dental_Clinic/Screenshot%2024-10-14%20213131.png)
+![Login and Signup Screen 2](Dental_Clinic/Screenshot%2024-10-14%20213142.png)
 
 # Home
-[Image of Home Screen](Screenshot%2024-10-14%20230406.png)
+![Home Screen](Dental_Clinic/Screenshot%2024-10-14%20230406.png)
 
 # Appointment Booking
-[Image of Appointment Booking Screen](Screenshot%2024-10-14%20230452.png)
+![Appointment Booking Screen](Dental_Clinic/Screenshot%2024-10-14%20230452.png)
 
 # About Us
-[Image of About Us Screen](Screenshot%2024-10-14%20230553.png)
+![About Us Screen](Dental_Clinic/Screenshot%2024-10-14%20230553.png)
 
 # Treatments
-[Image of Treatments Screen](Screenshot%2024-10-14%20230606.png)
+![Treatments Screen](Dental_Clinic/Screenshot%2024-10-14%20230606.png)
 
 # Contact Us
-[Image of Contact Us Screen](Screenshot%2024-10-14%20230615.png)
+![Contact Us Screen](Dental_Clinic/Screenshot%2024-10-14%20230615.png)
