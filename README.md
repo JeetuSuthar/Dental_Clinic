@@ -1,11 +1,15 @@
-
 ****Project Features*****
--User Authentication
--JWT Tokens for secure access
--bcrypt for password hashing
--Responsive UI
--Appointment Booking 
-Essential middlewares for handling authentication and requests
+
+- **User Authentication**
+  - JWT Tokens for secure access
+  - bcrypt for password hashing
+
+- **Responsive UI**
+
+- **Appointment Booking**
+
+- **Essential Middlewares**
+  - Handling authentication and requests
 
 # Login and Signup
 ![Login Page](images/login.png)
