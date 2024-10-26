@@ -27,4 +27,4 @@ Welcome to my GitHub Pages website! Here, you'll find details about the project,
 ![Treatments Screen](images/Treatments.png)
 
 # Contact Us
-![Contact Us Screen](images/contactUs.png)
+![Contact Us Screen](images/ContactUs.png)
