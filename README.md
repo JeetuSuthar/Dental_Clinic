@@ -11,20 +11,20 @@ Welcome to my GitHub Pages website! Here, you'll find details about the project,
 - Contact Us
 
 # Login and Signup
-![Login and Signup Screen](images/login.png)
-![Login and Signup Screen 2](images/Screenshot%2024-10-14%20213142.png)
+![Login Page](images/login.png)
+![Signup page](images/signup.png)
 
 # Home
-![Home Screen](images/Screenshot%2024-10-14%20230406.png)
+![Home Screen](images/Home.png)
 
 # Appointment Booking
-![Appointment Booking Screen](images/Screenshot%2024-10-14%20230452.png)
+![Appointment Booking Screen](images/appointment.png)
 
 # About Us
-![About Us Screen](images/Screenshot%2024-10-14%20230553.png)
+![About Us Screen](images/aboutUs.png)
 
 # Treatments
-![Treatments Screen](images/Screenshot%2024-10-14%20230606.png)
+![Treatments Screen](images/Treatments.png)
 
 # Contact Us
-![Contact Us Screen](images/Screenshot%2024-10-14%20230615.png)
+![Contact Us Screen](images/contactUs.png)
