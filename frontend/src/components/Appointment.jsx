@@ -195,7 +195,7 @@ const Appointment = () => {
               </div>
             ))}
           </div>
-        )}
+        )} 
       </div>
     </div>
   );

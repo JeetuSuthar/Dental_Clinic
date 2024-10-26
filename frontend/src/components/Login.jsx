@@ -34,7 +34,7 @@ const Login = ({ setIsAuthenticated }) => {
         setLoading(true);
 
         try {
-            const url = 'http://localhost:8080/auth/login'; // Corrected URL
+            const url = 'http://localhost:8080/auth/login'; 
             const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

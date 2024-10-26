@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link ,NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
@@ -24,8 +24,8 @@ const Navbar = () => {
             </div>
             <ul className='hidden md:flex'>
                 {links.map(({ id, link, name }) => (
-                    <li key={id} className='px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-125 duration-200 hover:text-black'>
-                        <Link to={link}>{name}</Link>
+                    <li key={id} className='px-4 cursor-pointer capitalize font-medium  hover:scale-125 duration-200 hover:text-black'>
+                        <NavLink to={link} className={({ isActive })=> isActive?"text-orange-700 ":"text-gray-500 " } >{name}</NavLink>
                     </li>
                 ))}
             </ul>
