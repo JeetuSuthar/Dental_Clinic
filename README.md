@@ -1,14 +1,25 @@
-# My Website
 
-Welcome to my GitHub Pages website! Here, you'll find details about the project, features, and how to use it.
+Project Features
+User Authentication
 
-## Features
-- Login and Signup
-- Home
-- Appointment Booking
-- About Us
-- Treatments
-- Contact Us
+JWT Tokens for secure access
+bcrypt for password hashing
+Responsive UI
+
+Attractive and user-friendly design
+Core Functionalities
+
+Login and Signup
+Appointment Booking
+Additional Pages
+
+Home
+About Us
+Treatments
+Contact Us
+Middleware Implementation
+
+Essential middlewares for handling authentication and requests
 
 # Login and Signup
 ![Login Page](images/login.png)
