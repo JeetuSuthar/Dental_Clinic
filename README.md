@@ -11,7 +11,7 @@ Welcome to my GitHub Pages website! Here, you'll find details about the project,
 - Contact Us
 
 # Login and Signup
-[Image of Login and Signup Screen](Screenshot%2024-10-14%20213131.png)
+![Login and Signup](https://your-username.github.io/your-repo/Screenshot%2024-10-14%20213131.png)
 [Image of Login and Signup Screen 2](Screenshot%2024-10-14%20213142.png)
 
 # Home
