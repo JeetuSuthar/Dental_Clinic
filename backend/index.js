@@ -8,7 +8,7 @@ require('dotenv').config();
 require('./Models/db'); // Database connection
 
 const PORT = process.env.PORT || 8080;
-const app = express();
+const app = express(); 
 
 // Apply CORS middleware wit h the correct frontend origin
 app.use(cors({
