@@ -1,30 +1,31 @@
-# My Website
+****Project Features*****
 
-Welcome to my GitHub Pages website! Here, you'll find details about the project, features, and how to use it.
+- **User Authentication**
+  - JWT Tokens for secure access
+  - bcrypt for password hashing
 
-## Features
-- Login and Signup
-- Home
-- Appointment Booking
-- About Us
-- Treatments
-- Contact Us
+- **Responsive UI**
+
+- **Appointment Booking**
+
+- **Essential Middlewares**
+  - Handling authentication and requests
 
 # Login and Signup
-![Login and Signup Screen](Screenshot%2024-10-14%20213131.png)
-![Login and Signup Screen 2](Dental_Clinic/Screenshot%2024-10-14%20213142.png)
+![Login Page](images/login.png)
+![Signup page](images/signup.png)
 
 # Home
-![Home Screen](Dental_Clinic/Screenshot%2024-10-14%20230406.png)
+![Home Screen](images/Home.png)
 
 # Appointment Booking
-![Appointment Booking Screen](Dental_Clinic/Screenshot%2024-10-14%20230452.png)
+![Appointment Booking Screen](images/appointment.png)
 
 # About Us
-![About Us Screen](Dental_Clinic/Screenshot%2024-10-14%20230553.png)
+![About Us Screen](images/aboutUs.png)
 
 # Treatments
-![Treatments Screen](Dental_Clinic/Screenshot%2024-10-14%20230606.png)
+![Treatments Screen](images/Treatments.png)
 
 # Contact Us
-![Contact Us Screen](Dental_Clinic/Screenshot%2024-10-14%20230615.png)
+![Contact Us Screen](images/ContactUs.png)
