@@ -10,7 +10,7 @@ require('./Models/db'); // Database connection
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-// Apply CORS middleware with the correct frontend origin
+// Apply CORS middleware wit h the correct frontend origin
 app.use(cors({
   origin: 'http://localhost:5173', // Correct origin for your frontend
   methods: ['GET', 'POST'],
