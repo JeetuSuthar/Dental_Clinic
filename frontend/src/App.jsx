@@ -7,23 +7,19 @@ import Treatment from './pages/Treatment';
 import Footer from './components/Footer';
 import Profile from './pages/Profile';
 import Login from './components/Login';
-import Signup from './components/Signup'; // Import your Signup component
+import Signup from './components/Signup';
 import ClinicInfo from './pages/ClinicInfo';
 import Appointment from './components/Appointment';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("loggedInUser"));
 
-  // Update authentication state when the localStorage changes
   useEffect(() => {
     const handleStorageChange = () => {
       setIsAuthenticated(!!localStorage.getItem("loggedInUser"));
     };
 
-    // Add event listener to window for storage changes
     window.addEventListener('storage', handleStorageChange);
-
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('storage', handleStorageChange);
     };
@@ -34,45 +30,23 @@ function App() {
       <Navbar />
       <hr className='text-black border' />
       <Routes>
-        <Route
-          path="/Dental_Clinic/login"
-          element={!isAuthenticated ? <Login setIsAuthenticated={setIsAuthenticated} /> : <Navigate to="/Dental_Clinic/" />}
-        />
-        <Route
-          path="/Dental_Clinic/signup"
-          element={!isAuthenticated ? <Signup setIsAuthenticated={setIsAuthenticated} /> : <Navigate to="/Dental_Clinic/" />}
-        />
-        <Route
-          path="/Dental_Clinic/"
-          element={isAuthenticated ? <LandingPage /> : <Navigate to="/Dental_Clinic/login" />}
-        />
-        <Route
-          path="/Dental_Clinic/about-us"
-          element={isAuthenticated ? <AboutUs /> : <Navigate to="/Dental_Clinic/login" />}
-        />
-        <Route
-          path="/Dental_Clinic/treatment"
-          element={isAuthenticated ? <Treatment /> : <Navigate to="/Dental_Clinic/login" />}
-        />
-        <Route
-          path="/Dental_Clinic/clinicinfo"
-          element={isAuthenticated ? <ClinicInfo/> : <Navigate to="/Dental_Clinic/clinicInfo" />}
-        />
+        <Route path="/Dental_Clinic/login" element={<Login />} />
+        <Route path="/Dental_Clinic/signup" element={<Signup />} />
+        <Route path="/Dental_Clinic" element={<LandingPage />} />
+        <Route path="/Dental_Clinic/about-us" element={<AboutUs />} />
+        <Route path="/Dental_Clinic/treatment" element={<Treatment />} />
+        <Route path="/Dental_Clinic/clinicinfo" element={<ClinicInfo />} />
         <Route
           path="/Dental_Clinic/appointment"
-          element={isAuthenticated ? <Appointment/> : <Navigate to="/Dental_Clinic/appointment" />}
+          element={isAuthenticated ? <Appointment /> : <Navigate to="/Dental_Clinic/login" />}
         />
-        <Route
-          path="/profile"
-          element={isAuthenticated ? <Profile /> : <Navigate to="/Dental_Clinic/login" />}
-        />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
-      
     </Router>
   );
 }
 
-// LandingPage component
+// LandingPage Component
 const LandingPage = () => {
   return (
     <>
@@ -85,12 +59,12 @@ const LandingPage = () => {
       <section id="treatments">
         <Treatment />
       </section>
-      <section id="treatments">
-        <ClinicInfo />zz
+      <section id="clinic-info">
+        <ClinicInfo />
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
-}
+};
 
 export default App;

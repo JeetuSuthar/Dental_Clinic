@@ -11,7 +11,7 @@ const Home = () => {
     useEffect(() => {
         const user = localStorage.getItem("loggedInUser");
         if (!user) {
-            navigate("/Dental_Clinic/login"); // Redirect to login if not authenticated
+            navigate(""); // Redirect to login if not authenticated
         } else {
             setLoggedInUser(user);
         }
