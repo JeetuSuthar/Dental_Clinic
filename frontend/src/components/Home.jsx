@@ -8,7 +8,7 @@ const Home = () => {
     const navigate = useNavigate();
 
     // Set the logged-in user's name from localStorage
-    useEffect(() => {
+    useEffect(() => { 
         const user = localStorage.getItem("loggedInUser");
         if (!user) {
             navigate(""); // Redirect to login if not authenticated
