@@ -45,7 +45,7 @@ const Home = () => {
             </div>
  
             <div className="lg:flex items-center justify-center">
-                <div className="lg:w-[45%]">
+                <div className="lg:w-[45%]"> 
                     <h1 c lassName="font-bold py-8 lg:py-4 text-5xl lg:text-6xl">
                         We Care For Your <span className="text-blue-400">Smile</span>
                     </h1>
