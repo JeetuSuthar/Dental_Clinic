@@ -30,16 +30,13 @@ function App() {
       <Navbar />
       <hr className='text-black border' />
       <Routes>
-        <Route path="/Dental_Clinic/login" element={<Login />} />
+        <Route path="/Dental_Clinic/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="/Dental_Clinic/signup" element={<Signup />} />
         <Route path="/Dental_Clinic" element={<LandingPage />} />
         <Route path="/Dental_Clinic/about-us" element={<AboutUs />} />
         <Route path="/Dental_Clinic/treatment" element={<Treatment />} />
         <Route path="/Dental_Clinic/clinicinfo" element={<ClinicInfo />} />
-        <Route
-          path="/Dental_Clinic/appointment"
-          element={isAuthenticated ? <Appointment /> : <Navigate to="/Dental_Clinic/login" />}
-        />
+        <Route path="/Dental_Clinic/" element={isAuthenticated ? <Home /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>

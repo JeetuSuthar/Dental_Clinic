@@ -47,12 +47,15 @@ const Login = ({ setIsAuthenticated }) => {
 
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
+            console.log("setIsAuthenticated:", setIsAuthenticated);
 
             if (success) {
                 handleSuccess(message);
                 localStorage.setItem('token', jwtToken);
                 localStorage.setItem('loggedInUser', name);
                 setIsAuthenticated(true);
+                console.log("setIsAuthenticated:", setIsAuthenticated);
+
                 navigate('/Dental_Clinic/');
             } else if (error && error.details) {
                 const details = error.details[0]?.message || 'An error occurred during login.';
